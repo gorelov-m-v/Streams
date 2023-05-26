@@ -1,5 +1,8 @@
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SandBox {
 
@@ -11,6 +14,7 @@ public class SandBox {
 		System.out.println(digits.stream().dropWhile(n -> n == 1).count());
 //		System.out.println(digits.stream().dropWhile(n -> n > 0).count());
 //		System.out.println(digits.stream().dropWhile(n -> n > 9).count());
+
 
 	}
 }
