@@ -14,6 +14,7 @@ public class Practicum {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		printMenu();
+		//test
 
 		String commandValue = scanner.nextLine();
 
