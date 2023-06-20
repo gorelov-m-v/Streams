@@ -3,6 +3,7 @@ package practicum.airplain;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
 public class Practicum {
     // Пример списка пассажиров (на самом деле их больше)
