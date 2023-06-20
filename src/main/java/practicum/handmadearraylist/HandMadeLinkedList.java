@@ -1,5 +1,10 @@
 package practicum.handmadearraylist;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.NoSuchElementException;
 
 public class HandMadeLinkedList<T> {
@@ -68,7 +73,7 @@ public class HandMadeLinkedList<T> {
         return this.size;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException {
         HandMadeLinkedList<Integer> integers = new HandMadeLinkedList<>();
 
         integers.addFirst(1);
@@ -82,5 +87,15 @@ public class HandMadeLinkedList<T> {
         System.out.println(integers.size());
         System.out.println(integers.getLast());
         System.out.println(integers.size());
+
+        String str = "{\"time\":1687275515,\"token1\":\"bet\"}";
+        str = str + "SECRET";
+
+        byte[] strToByte = str.getBytes();
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        byte[] MD5 = md.digest(strToByte);
+
+        byte[] base64 = (Base64.getEncoder().encode(MD5));
+        System.out.println(new String(base64)); // gXV/2OnfIuNU233U2VthoQ==
     }
 }
