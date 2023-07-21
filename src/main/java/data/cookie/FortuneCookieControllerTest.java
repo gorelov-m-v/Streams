@@ -2,9 +2,7 @@ package data.cookie;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static java.util.Collections.singletonList;
 
 public class FortuneCookieControllerTest {
@@ -12,7 +10,6 @@ public class FortuneCookieControllerTest {
     FortuneCookieFactory fortuneCookieFactory;
     private static FortuneCookieController goodFactoryController;
     private static FortuneCookieController badFactoryController;
-
 
     @BeforeAll
     public static void before() {
@@ -32,7 +29,6 @@ public class FortuneCookieControllerTest {
                 )
         );
     }
-
 
     @Test
     public void shouldReturnPositiveFortune() {
