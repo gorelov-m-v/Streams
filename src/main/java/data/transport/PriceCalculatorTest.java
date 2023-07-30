@@ -110,10 +110,6 @@ public class PriceCalculatorTest {
         Assertions.assertEquals("transport type 'DRONE' is not handled correctly", ex.getMessage());
     }
 
-
-
-
-
     private Executable generateExecutable(TransportType type, int distance) {
         return () -> priceCalculator.calculatePrice(type, distance);
     }
