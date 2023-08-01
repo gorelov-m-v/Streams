@@ -1,33 +1,26 @@
-package http.serial.hw;
+package http.gsonbuilder.prettyPrinting;
 
 import com.google.gson.Gson;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import com.google.gson.GsonBuilder;
 
-class Practicum {
+import java.time.LocalDate;
+
+class UserPostConverter {
     public static void main(String[] args) {
         UserPost post = new UserPost();
         post.setPhotoUrl("https://new-social-network.site/images/928476864.jpg");
         post.setUserId(97_748);
         post.setDescription("Классное фото!");
         post.setLikesQuantity(753);
-
-        // сконвертируйте publicationDateString в экземпляр LocalDate
-        String publicationDateString = "25--12--2020";
-
-        final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd--MM--yyyy");
-        LocalDate publicationDate = LocalDate.parse(publicationDateString, dtf);
+        LocalDate publicationDate = LocalDate.of(2020, 12, 25);
         post.setPublicationDate(publicationDate);
 
-        // создайте экземпляр Gson
-        Gson gson = new Gson();
-        // сериализуйте объект
-        String postSerialized = gson.toJson(post);
-        System.out.println("Serialized post: " + postSerialized);
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.setPrettyPrinting();
+        Gson gson = gsonBuilder.create();
 
-        // десериализуйте объект
-        UserPost postDeserialized = gson.fromJson(postSerialized, UserPost.class);
-        System.out.println("Deserialized post: " + postDeserialized);
+        String postSerialized = gson.toJson(post);
+        System.out.println(postSerialized);
     }
 }
 

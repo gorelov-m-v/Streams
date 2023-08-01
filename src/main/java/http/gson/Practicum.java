@@ -1,4 +1,4 @@
-package http.serial;
+package http.gson;
 
 import com.google.gson.Gson;
 

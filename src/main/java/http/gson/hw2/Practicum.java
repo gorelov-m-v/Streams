@@ -1,4 +1,4 @@
-package http.serial.hw2;
+package http.gson.hw2;
 import com.google.gson.Gson;
 import java.io.IOException;
 
