@@ -122,7 +122,7 @@ public class Praktikum {
             Optional<Integer> postIdOpt = getPostId(exchange);
             if (postIdOpt.isEmpty()) {
                 writeResponse(exchange, "Некорректный идентификатор поста", 400);
-                
+
             }
             int postId = postIdOpt.get();
 
